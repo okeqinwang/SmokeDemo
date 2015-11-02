@@ -1,7 +1,4 @@
 package edu.scut.util;
-/**
- * MyBatis SessionFactory������
- */
 import java.io.IOException;
 
 import org.apache.ibatis.io.Resources;
@@ -20,7 +17,6 @@ public final class MyBatisUtil {
             try {
                 sessionFactory = new SqlSessionFactoryBuilder().build(Resources
                         .getResourceAsReader(resource));
-                //���ע��ӳ��
 //                sessionFactory.getConfiguration().addMapper(FileHashMapper.class);
 //                sessionFactory.getConfiguration().addMapper(UploadFileMapper.class);
             } catch (IOException e) {
@@ -31,10 +27,6 @@ public final class MyBatisUtil {
         return sessionFactory;
     }
     
-    /**
-     * ��ȡSessionFactory
-     * @return	sessionFactory
-     */
     public static SqlSessionFactory getSessionFactory() {
         return sessionFactory;
     }

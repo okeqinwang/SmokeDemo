@@ -3,6 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+
+	<properties resource="config.properties">
+	</properties>
+
 	<settings>
 		<!-- changes from the defaults for testing -->
 		<setting name="cacheEnabled" value="false" />
@@ -18,11 +23,10 @@
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
-				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url"
-					value="jdbc:mysql://localhost:3306/smoke?useUnicode=true&amp;characterEncoding=UTF-8" />
-				<property name="username" value="root" />
-				<property name="password" value="q1w2e3r4" />
+				<property name="driver"  value="${jdbc.driver}" />
+				<property name="url"   value="${jdbc.url}" />
+				<property name="username"  value="${jdbc.uname}" />
+				<property name="password"  value="${jdbc.pwd" />
 			</dataSource>
 		</environment>
 	</environments>
